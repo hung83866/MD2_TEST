@@ -12,15 +12,7 @@ public class DanhBaServiceIMPL {
     public static List<DanhBa> danhBaList = new ArrayList();
 
     public void findAll() {
-        if (danhBaList.size()==0){
-            System.out.println("Chưa có thông tin!");
-            new Main();
-        }
-        for (int i = 0; i < danhBaList.size(); i++) {
-            System.out.println(danhBaList.get(i));
-
-        }
-        new Main();
+       docFileCSV();
     }
 
     public void docFileCSV() {
@@ -190,6 +182,7 @@ public class DanhBaServiceIMPL {
                 fileWriter.append(NEW_LINE_SEPARATOR);
             }
             System.out.println("Ghi file thành công! !!!");
+            new Main();
         } catch (Exception e) {
             System.err.println("Lỗi rồi!!!");
             e.printStackTrace();
